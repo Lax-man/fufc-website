@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Featherston United Football Club</title>
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://tally.so/widgets/embed.js"></script>
+    <style>
+        /* Specific styles for this page to allow the form to take up space */
+        .registration-container {
+            max-width: 800px;
+            margin: 40px auto;
+            min-height: 80vh;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo-container">
+                    <img src="assets/logo.jpg" alt="Featherston United FC Logo" class="club-logo">
+                    <a href="index.html" class="logo-text">Featherston United FC</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#fixtures">Fixtures</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="register.html" class="btn"
+                            style="background-color: white; color: var(--primary-blue);">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container registration-container">
+        <h1 class="section-title">Player Registration 2026</h1>
+        <p style="text-align: center; margin-bottom: 30px;">
+            Please complete the form below to register for the upcoming season.
+        </p>
+
+        <!-- GOOGLE FORM EMBED START -->
+        <!-- 
+            INSTRUCTIONS:
+            1. Go to your Google Form.
+            2. Click "Send" (top right).
+            3. Click the "< >" (Embed) tab.
+            4. Adjust width to "100%" if possible, or just copy the code.
+            5. Paste the iframe line below, replacing the example.
+        -->
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdXxxxxxxxxxxxxxxxxx/viewform?embedded=true" width="100%"
+            height="1200" frameborder="0" marginheight="0" marginwidth="0">
+            Loading…
+        </iframe>
+        <!-- GOOGLE FORM EMBED END -->
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Featherston United Football Club. All rights reserved.</p>
+            <div style="margin-top: 10px;">
+                <a href="#" style="color: white; margin: 0 10px;">Facebook</a>
+                <a href="#" style="color: white; margin: 0 10px;">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

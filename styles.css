@@ -1,0 +1,489 @@
+/* Featherston United FC - Main Styles */
+:root {
+  --primary-blue: #0044cc;
+  /* Royal Blue */
+  --accent-black: #111111;
+  --text-white: #ffffff;
+  --text-dark: #333333;
+  --background-light: #f4f4f4;
+  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Global Image Reset to prevent overflow */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  font-family: var(--font-main);
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--background-light);
+  overflow-x: hidden;
+  /* Prevent horizontal scroll from large elements */
+}
+
+/* Header */
+header {
+  background-color: #0044cc;
+  /* Changed from black to Club Blue */
+  color: var(--text-white);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Sponsors Ticker */
+.sponsors-ticker {
+  background: white;
+  /* Or change to light grey #f4f4f4 */
+  width: 100%;
+  overflow: hidden;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  white-space: nowrap;
+  position: relative;
+  z-index: 900;
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  /* Ensure track is as wide as its content */
+  animation: scroll 40s linear infinite;
+  /* Slower, smoother */
+}
+
+.sponsor-item {
+  padding: 0 40px;
+  /* Space between logos */
+  display: flex;
+  align-items: center;
+}
+
+.sponsor-item img {
+  height: 60px;
+  /* Consistent height */
+  width: auto;
+  /* Removed grayscale filter for full color */
+  opacity: 0.9;
+  transition: all 0.3s;
+}
+
+.sponsor-item img:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Infinite Scroll Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  /* We have 3 sets of logos. Moving -33.33% means we move exactly one set's width */
+  100% {
+    transform: translateX(-33.33%);
+  }
+}
+
+/* Pause on hover */
+.sponsors-ticker:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  /* Needed for absolute positioning context if we wanted, but we might just let the image hang out */
+}
+
+.club-logo {
+  height: 110px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 20px;
+  background: white;
+  padding: 5px;
+  position: absolute;
+  top: -20px;
+  left: 0;
+  z-index: 1100;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text-white);
+  text-decoration: none;
+  margin-left: 115px;
+  /* Push text over to clear the bigger logo */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  /* Ensures text links align with button center */
+}
+
+.nav-links a {
+  color: var(--text-white);
+  /* <--- CHANGE THIS to experiment with Nav Text Color (e.g. #cccccc) */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #000000;
+  /* Darker color on hover */
+}
+
+/* Specific style for the Register button in the nav */
+.nav-links .btn {
+  background-color: var(--accent-black);
+  /* Contrast against Blue Header */
+  color: white;
+  padding: 10px 25px;
+  border: 1px solid white;
+  /* Optional: adds a nice pop */
+}
+
+.nav-links .btn:hover {
+  background-color: white;
+  color: var(--primary-blue);
+  border-color: white;
+}
+
+/* Hero Section */
+/* Hero Section */
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('assets/team_photo_cropped.jpg');
+  background-size: cover;
+  background-position: center 70%;
+  /* Tweaked: Focus slightly lower than center */
+  height: 60vh;
+  display: flex;
+  /* Kept for structure */
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 0;
+  /* Remove padding since text is gone */
+}
+
+/* ... (skip to info card images) ... */
+
+/* Rectangular Images inside Info Cards */
+.info-card img {
+  width: 100%;
+  /* Full width */
+  height: 200px;
+  /* Rectangle height */
+  border-radius: 4px;
+  /* Soft corners */
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: none;
+  /* No border for rects */
+  display: block;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--primary-blue);
+  color: var(--text-white);
+  padding: 12px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #003399;
+}
+
+/* Sections */
+section {
+  padding: 60px 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  color: var(--accent-black);
+}
+
+/* About & Info */
+#about {
+  padding-top: 10px;
+  /* Reduced padding (was 60px) to bring text closer to top */
+  padding-bottom: 60px;
+
+  /* --- EXPERIMENT WITH BACKGROUNDS HERE --- */
+  background-color: #E6ECFA;
+  /* Current: Ice Blue (Subtle blend) */
+  /* background-color: #ffffff;     <-- Option 1: Pure White (Clean) */
+  /* background-color: #f0f0f0;     <-- Option 2: Light Grey */
+  /* background-color: #0044cc;     <-- Option 3: Club Blue (Bold, text needs to be white) */
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.info-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  /* border-top: 4px solid var(--primary-blue); */
+  border-bottom: 4px solid var(--primary-blue);
+
+  transition: transform 0.2s;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  /* Lift effect on hover */
+}
+
+/* Rectangular Images inside Info Cards */
+.info-card img {
+  width: 100%;
+  height: 200px;
+  border-radius: 4px;
+  /* Rectangle */
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: none;
+  display: block;
+}
+
+/* Fixtures (Embed Container) */
+.fixtures-container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+/* Contact Form */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Footer */
+footer {
+  background-color: #0044cc;
+  color: var(--text-white);
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: auto;
+}
+
+/* Page Layout System */
+.page-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  /* Default to stack (mobile) */
+  gap: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+@media (min-width: 900px) {
+  .page-layout {
+    grid-template-columns: 2fr 1fr;
+    /* Desktop: Content (2/3) | Sidebar (1/3) */
+  }
+}
+
+.page-content section {
+  padding-top: 0;
+  /* Remove huge padding since we are inside a container now */
+}
+
+.page-sidebar {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  height: fit-content;
+  /* Don't stretch full height if empty */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-widget {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Media Row Layout (Facebook + Gallery) */
+.media-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+@media (min-width: 800px) {
+  .media-grid {
+    grid-template-columns: 350px 1fr;
+    /* Fixed 350px for Social, rest for Gallery */
+    align-items: start;
+  }
+}
+
+/* Gallery Styling */
+.gallery-container {
+  width: 100%;
+}
+
+.gallery-main {
+  width: 100%;
+  height: 400px;
+  /* Fixed height for consistency */
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background-color: #000;
+}
+
+#gallery-main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.gallery-thumbnails {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.gallery-thumb {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s, transform 0.2s;
+}
+
+.gallery-thumb:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.gallery-thumb.active {
+  opacity: 1;
+  border: 2px solid var(--primary-blue);
+}
+
+/* Update Mobile Responsive Menu */
+@media (max-width: 768px) {
+  .gallery-main {
+    height: 250px;
+    /* Smaller on mobile */
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--primary-blue);
+    /* Ensure background is solid blue on mobile */
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    display: none;
+    /* Hide by default on mobile, would need JS to toggle */
+  }
+
+  /* Simple mobile menu fix: just show them stacked for now without JS */
+  .nav-links {
+    display: flex;
+    position: static;
+    background: none;
+    padding: 0;
+    margin-top: 10px;
+    align-items: center;
+  }
+}
