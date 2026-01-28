@@ -2,11 +2,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     // CONFIGURATION: Gallery Images
     const imageFiles = [
-        "Derby1.JPG", "Derby2.JPG", "League1.jpg", "League2.jpg", "League3.jpg",
-        "League4.jpg", "League5.JPG", "League6.JPG", "League7.JPG", "League8.JPG",
-        "League9.JPG", "League10.JPG", "League11.JPG", "League12.JPG", "League13.JPG",
-        "League14.JPG", "League15.JPG", "League16.JPG", "MECup1.jpg", "MECup2.jpg",
-        "MECup3.jpg", "MECup4.jpg", "MECup5.jpg", "WairarapaShieldWinners.jpg"
+        "Derby1.jpg", "Derby2.jpg", "League1.jpg", "League2.jpg", "League3.jpg",
+        "League4.jpg", "League5.jpg", "League6.jpg", "League7.jpg", "League8.jpg",
+        "League9.jpg", "League10.jpg", "League11.jpg", "League12.jpg", "League13.jpg",
+        "League14.jpg", "League15.jpg", "League16.jpg", "League17.jpg", "League18.jpg",
+        "League19.jpg", "League20.jpg", "League21.jpg", "League22.jpg", "League23.jpg",
+        "League24.jpg", "MECup1.jpg", "MECup2.jpg", "MECup3.jpg", "MECup4.jpg",
+        "MECup5.jpg", "WairarapaShieldWinners.jpg"
     ];
 
     const galleryMain = document.querySelector('.gallery-main');

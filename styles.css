@@ -400,11 +400,18 @@ footer {
     /* Fixed 350px for Social, rest for Gallery */
     align-items: start;
   }
+
+  .media-col-gallery {
+    min-width: 0;
+    /* Crucial for preventing grid item overflow */
+  }
 }
 
 /* Gallery Styling */
 .gallery-container {
   width: 100%;
+  min-width: 0;
+  /* Prevent overflow */
 }
 
 .gallery-main {
